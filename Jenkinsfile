@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    options {
+        // Stop the build early in case of compile or test failures
+        skipStagesAfterUnstable()
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -9,12 +14,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                build 'test'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploy ...'
             }
         }
     }
