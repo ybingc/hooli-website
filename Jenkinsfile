@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                build 'build-bookzy
+                build 'build-bookzy'
             }
         }
     }
