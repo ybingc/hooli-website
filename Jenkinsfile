@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                build 'test'
+                build 'test-bookzy'
             }
         }
         stage('Deploy') {
